@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Banner styling */
+  #mainHeader {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: red; /* overridden inline but here as fallback */
+  }
+  
+  /*Event container styles */
+  .eventCard {
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 15px;
+    color: #333;
+    border: 1px solid #ccc; /* 8. border */
+  }
+  
+  /*Section header with gradient background */
+  section.header {
+    background: linear-gradient(90deg, #00796b, #004d40);
+    padding: 2rem;
+    color: #fff;
+  }
+  
+  /* Headings and paragraphs */
+  h2, h3, p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  /* Text description styling */
+  .description {
+    text-align: justify;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    font-style: italic;
+    color: #222;
+    line-height: 1.5;
+  }
+  
+  /*  Link Styling */
+  a:link {
+    color: #00695c;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #004d40;
+    text-decoration: underline;
+  }
+  a:visited {
+    color: #004d40;
+  }
+  a:active {
+    color: #00251a;
+  }
+  
+  /* Navigation list */
+  nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background-color: #e0f2f1;
+    margin: 20px 0;
+  }
+  
+  nav li {
+    padding: 5px 10px;
+  }
+  
+  /* Table styling */
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #fff;
+    color: #222;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  /*Outline for focused input fields */
+  input:focus, textarea:focus {
+    outline: 3px solid #007BFF;
+  }
+  
+  /* Visibility comparison classes */
+  .hidden-visibility {
+    visibility: hidden;
+  }
+  
+  .hidden-display {
+    display: none;
+  }
+  
+  /* Multi-column layout for news articles */
+  .news-article {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    padding: 1em;
+    margin: 20px;
+    background: #fff;
+    color: #222;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  /*Responsive design */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
+    nav li {
+      display: block;
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    img {
+      max-width: 80vw;
+      height: auto;
+    }
+  
+    body {
+      font-size: 14px;
+    }
+  
+    /* Stack event cards full width */
+    .eventCard {
+      margin: 10px;
+      padding: 10px;
+    }
+  }
+  

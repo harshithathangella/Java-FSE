@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Community Event Portal</title>
+
+  <!-- 5. Typography: Google Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- 2 & 3 & 4 & 6 & 7 & 8 & 9 & 10: External Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 1. Internal style: body background -->
+  <style>
+    body {
+      background: #004d40 url('cityscape.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Inline style for heading -->
+  <h1 id="mainHeader" style="color:red;">Welcome to the Local Community Event Portal</h1>
+
+  <section class="header">
+    <h2>Upcoming Events</h2>
+  </section>
+
+  <section class="news-article">
+    <h3>Community Clean-Up Drive</h3>
+    <p class="description">
+      Join us for a city-wide clean-up initiative to beautify our parks and streets.
+      Volunteers are appreciated!
+    </p>
+  </section>
+
+  <section>
+    <div class="eventCard">
+      <h3>Music Festival</h3>
+      <p>Enjoy live performances from local bands and artists.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="eventCard">
+      <h3>Farmers Market</h3>
+      <p>Fresh produce and crafts from local farmers and artisans.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Table for event admins -->
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Music Festival</td><td>June 10</td><td>Central Park</td></tr>
+      <tr><td>Farmers Market</td><td>June 15</td><td>Town Square</td></tr>
+      <tr><td>Clean-Up Drive</td><td>June 20</td><td>Citywide</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Volunteers</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

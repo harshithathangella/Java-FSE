@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Event Portal</title>
+  <style>body { font-family: sans-serif; }</style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a> |
+    <a href="#events">Events</a> |
+    <a href="#contact">Contact</a> |
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Main -->
+  <main id="home">
+    <div id="welcomeBanner" style="background-color: blue; color: white; padding: 10px;">
+      Welcome, Resident! <span style="color:red; font-weight:bold;">Special Offer!</span>
+    </div>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <table>
+        <caption>Past Events Gallery</caption>
+        <tr>
+          <td><img src="images/spring-fair.jpg" alt="Spring Fair" class="imgBorder"></td>
+          <td><img src="images/parade.jpg" alt="Parade" title="Parade" class="imgBorder"></td>
+          <td><img src="images/cleanup.jpg" alt="Cleanup" title="Cleanup Drive" class="imgBorder"></td>
+        </tr>
+        <tr>
+          <td><img src="images/workshop.jpg" alt="Workshop" title="Workshop" class="imgBorder"></td>
+          <td><img src="images/concert.jpg" alt="Concert" title="Music Night" class="imgBorder"></td>
+          <td><img src="images/food-fest.jpg" alt="Food Fest" title="Food Festival" class="imgBorder"></td>
+        </tr>
+      </table>
+      
+
+      <form onsubmit="return showConfirmation()">
+        <h3>Register for Event</h3>
+        <input type="text" name="name" placeholder="Your Name" required autofocus><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="date" name="date" required><br>
+        <select id="eventType" onchange="savePreference(this.value)">
+          <option>Select Event Type</option>
+          <option>Concert</option>
+          <option>Workshop</option>
+        </select>
+        <br>
+        <textarea placeholder="Message" onkeyup="countChars(this)"></textarea><br>
+        <input type="tel" id="phone" placeholder="Phone" onblur="validatePhone(this)"><br>
+        <output id="confirmation"></output><br>
+        <button type="submit" onclick="showConfirmation()">Submit</button>
+        <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+      </form>
+
+      <iframe width="560" height="315"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="Promo Video" frameborder="0" allowfullscreen></iframe>
+
+<img src="images/banner.jpg"
+     alt="Community Summer Fair Promo"
+     title="Double-click to enlarge"
+     ondblclick="this.style.transform='scale(1.5)'"
+     style="transition: transform 0.3s ease; cursor: zoom-in;">
+
+
+      <button onclick="getLocation()">Find Nearby Events</button>
+      <p id="location"></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="highlight">Email: harsh@cityevents.com</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 City Council</p>
+  </footer>
+
+  <script>
+    //Feedback Events
+    function validatePhone(el) {
+      if (!/^\d{10}$/.test(el.value)) alert("Enter valid 10-digit number");
+    }
+
+    function showConfirmation() {
+      document.getElementById("confirmation").textContent = "Form submitted!";
+      return false;
+    }
+
+    function countChars(el) {
+      console.log("Characters typed:", el.value.length);
+    }
+
+    // Unload Warning
+    window.onbeforeunload = () => "Changes may be lost. Continue?";
+
+    //  localStorage
+    function savePreference(val) {
+      localStorage.setItem("preferredEvent", val);
+    }
+
+    window.onload = () => {
+      const val = localStorage.getItem("preferredEvent");
+      if (val) document.getElementById("eventType").value = val;
+    }
+
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert("Preferences cleared");
+    }
+
+    // Geolocation
+    function getLocation() {
+      if (!navigator.geolocation) return alert("Geolocation not supported");
+      navigator.geolocation.getCurrentPosition(
+        pos => document.getElementById("location").textContent =
+          `Lat: ${pos.coords.latitude}, Long: ${pos.coords.longitude}`,
+        err => alert("Error: " + err.message),
+        { enableHighAccuracy: true, timeout: 5000 }
+      );
+    }
+  </script>
+
+  <style>
+    .imgBorder { border: 2px solid #555; width: 100px; }
+    .highlight { background: yellow; }
+    form input, select, textarea { margin: 5px; }
+  </style>
+</body>
+</html>
